@@ -22,8 +22,8 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: TechieGeekee
+          output: dist/metrics.svg         # ✅ Save to dist folder
           template: classic
-          output: dist/metrics.svg
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Calcutta
 
@@ -123,6 +123,9 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+
+      - name: Show generated files
+        run: ls -R dist
 
       - name: Commit & Push Generated Files
         uses: stefanzweifel/git-auto-commit-action@v5
