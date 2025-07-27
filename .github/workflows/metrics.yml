@@ -108,4 +108,4 @@ jobs:
         with:
           commit_message: "chore: update snake animation"
           file_pattern: dist/*
-          push_options: --no-verify
+          push_options: --force
