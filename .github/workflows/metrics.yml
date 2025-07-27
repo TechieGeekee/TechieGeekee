@@ -70,11 +70,6 @@ jobs:
           plugin_projects_limit: 4
           plugin_repositories: yes
           plugin_repositories_order: featured, pinned, starred, random
-          plugin_splatoon: yes
-          plugin_splatoon_salmon_limit: 1
-          plugin_splatoon_sections: player, versus, salmon-run
-          plugin_splatoon_source: splatnet
-          plugin_splatoon_versus_limit: 1
           plugin_steam: yes
           plugin_steam_achievements_limit: 2
           plugin_steam_games_limit: 1
