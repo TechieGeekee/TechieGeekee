@@ -17,12 +17,14 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Generate GitHub Metrics
+      - name: Generate GitHub Metrics (both root and dist)
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: TechieGeekee
-          output: dist/metrics.svg         # ✅ Save to dist folder
+          output: |
+            github-metrics.svg         # ✅ Keeps your original file in root
+            dist/metrics.svg           # ✅ Also save to dist/ folder
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Calcutta
@@ -127,10 +129,10 @@ jobs:
       - name: Show generated files
         run: ls -R dist
 
-      - name: Commit & Push Generated Files
+      - name: Commit & Push `dist/` folder only (safe push)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update metrics and snake animations"
           branch: ${{ github.ref_name }}
           file_pattern: dist/*
-          push_options: --force
+          push_options: --no-verify
