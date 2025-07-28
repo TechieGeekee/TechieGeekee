@@ -70,8 +70,6 @@ jobs:
           plugin_posts: yes
           plugin_posts_limit: 4
           plugin_posts_user: .user.login
-          plugin_projects: yes
-          plugin_projects_limit: 4
           plugin_repositories: yes
           plugin_repositories_order: featured, pinned, starred, random
           plugin_starlists: yes
